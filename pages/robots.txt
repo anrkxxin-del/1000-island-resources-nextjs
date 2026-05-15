@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /
+
+# 初期禁止机器人索引
+# 内容验证完成后更新此文件以允许索引
+# 这将自动位于 /resource/robots.txt
+
+Sitemap: https://1000-island.com/resource/sitemap.xml
