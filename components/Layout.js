@@ -8,7 +8,7 @@ export default function Layout({ children }) {
         <nav className={styles.nav}>
           <Link href="/" className={styles.logo}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/resource/logo.png" alt="千岛游学" height={40} style={{ objectFit: 'contain' }} />
+            <img src="/resource/logo.png" alt="千岛游学" style={{ height: '36px', width: 'auto', display: 'block' }} />
           </Link>
           <ul className={styles.navList}>
             <li><Link href="/teacher">Teachers</Link></li>
