@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import styles from './SchoolImage.module.css';
 
-const R2_BASE_URL = 'https://pub-f27c7933df554a82bf9fd3bc8305630e.r2.dev';
+const R2_BASE_URL = 'https://assets.1000-island.com';
 
 export default function SchoolImage({
   src,
