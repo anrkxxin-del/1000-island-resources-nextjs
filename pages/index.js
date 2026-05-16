@@ -15,9 +15,9 @@ export default function Home() {
         {/* Hero 1 — 在线课 */}
         <section style={{ position: 'relative', width: '100%' }}>
           <picture>
-            <source media="(max-width: 768px)" srcSet="/hero-online-class-mobile.png" />
+            <source media="(max-width: 768px)" srcSet="/resource/hero-online-class-mobile.png" />
             <img
-              src="/hero-online-class.png"
+              src="/resource/hero-online-class.png"
               alt="千岛游学 AI时代职场英语 菲律宾外企背景老师1对1"
               style={{ width: '100%', height: 'auto', display: 'block' }}
             />
@@ -33,9 +33,9 @@ export default function Home() {
         {/* Hero 2 — 游学 */}
         <section style={{ position: 'relative', width: '100%' }}>
           <picture>
-            <source media="(max-width: 768px)" srcSet="/hero-study-abroad-mobile.png" />
+            <source media="(max-width: 768px)" srcSet="/resource/hero-study-abroad-mobile.png" />
             <img
-              src="/hero-study-abroad.png"
+              src="/resource/hero-study-abroad.png"
               alt="千岛游学 在菲律宾把英语真正用起来 精品游学项目"
               style={{ width: '100%', height: 'auto', display: 'block' }}
             />
