@@ -1,15 +1,10 @@
+import fs from 'fs';
+import path from 'path';
+import Link from 'next/link';
+import matter from 'gray-matter';
 import SEO from '../../components/SEO';
 
-const schools = [
-  { slug: 'cia', name: 'CIA — Cebu International Academy', location: '宿务 Mactan（拉普拉普市）' },
-  { slug: 'cpils', name: 'CPILS — Center for Premier International Language Studies', location: '宿务市区' },
-  { slug: 'ev-academy', name: 'EV Academy', location: '宿务市区' },
-  { slug: 'cg-academy', name: 'CG Academy — Cebu Globalization ESL Center', location: '宿务 Talisay / Banilad' },
-  { slug: 'beci', name: 'BECI — Baguio English Communication International', location: '碧瑶市' },
-  { slug: 'smeag', name: 'SMEAG Global Education', location: '宿务市' },
-];
-
-export default function SchoolsIndex() {
+export default function SchoolsIndex({ schools }) {
   return (
     <>
       <SEO
@@ -23,12 +18,35 @@ export default function SchoolsIndex() {
         <ul style={{ listStyle: 'none', padding: 0 }}>
           {schools.map(s => (
             <li key={s.slug} style={{ padding: '20px 0', borderBottom: '1px solid #f0f0f0' }}>
-              <a href={`/resource/schools/${s.slug}`} style={{ fontSize: '18px', fontWeight: '600', color: '#1a1a1a', textDecoration: 'none' }}>{s.name}</a>
+              <Link href={`/schools/${s.slug}`} style={{ fontSize: '18px', fontWeight: '600', color: '#1a1a1a', textDecoration: 'none' }}>{s.name}</Link>
               <p style={{ margin: '4px 0 0', fontSize: '14px', color: '#888' }}>{s.location}</p>
+              {s.description && <p style={{ margin: '10px 0 0', color: '#555', fontSize: '15px', lineHeight: '1.7' }}>{s.description}</p>}
             </li>
           ))}
         </ul>
       </main>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const contentDir = path.join(process.cwd(), 'content/schools');
+  const files = fs.existsSync(contentDir)
+    ? fs.readdirSync(contentDir).filter(f => f.endsWith('.mdx'))
+    : [];
+  const schools = files
+    .map(file => {
+      const { data } = matter(fs.readFileSync(path.join(contentDir, file), 'utf8'));
+      return {
+        name: data.name,
+        slug: data.slug || file.replace(/\.mdx$/, ''),
+        location: data.location || '',
+        description: data.description || '',
+        updated: data.updated || '',
+      };
+    })
+    .filter(s => s.slug && s.name)
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  return { props: { schools } };
 }

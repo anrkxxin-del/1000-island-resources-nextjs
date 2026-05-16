@@ -1,0 +1,14 @@
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.placeholder {
+  width: 100%;
+  min-height: 220px;
+  border-radius: 8px;
+  background: #eeeeee;
+}

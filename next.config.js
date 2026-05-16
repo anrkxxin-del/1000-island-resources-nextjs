@@ -6,8 +6,16 @@ const nextConfig = {
 
   // 图片优化
   images: {
-    domains: ['cdn.example.com'],
-    formats: ['image/avif', 'image/webp'],
+    loader: 'custom',
+    loaderFile: './lib/cloudflare-image-loader.js',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'pub-f27c7933df554a82bf9fd3bc8305630e.r2.dev',
+        pathname: '/**',
+      },
+    ],
+    formats: ['image/webp'],
   },
 
   // 国际化（预留多语言）
