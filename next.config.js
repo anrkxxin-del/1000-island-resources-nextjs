@@ -11,7 +11,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'pub-f27c7933df554a82bf9fd3bc8305630e.r2.dev',
+        hostname: 'assets.1000-island.com',
         pathname: '/**',
       },
     ],
