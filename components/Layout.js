@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import styles from './Layout.module.css';
 
 export default function Layout({ children }) {
@@ -8,7 +7,8 @@ export default function Layout({ children }) {
       <header className={styles.header}>
         <nav className={styles.nav}>
           <Link href="/" className={styles.logo}>
-            <Image src="/logo.png" alt="千岛游学" width={120} height={40} style={{ objectFit: 'contain' }} priority />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/resource/logo.png" alt="千岛游学" height={40} style={{ objectFit: 'contain' }} />
           </Link>
           <ul className={styles.navList}>
             <li><Link href="/teacher">Teachers</Link></li>
