@@ -1,45 +1,55 @@
+import Image from 'next/image';
 import SEO from '../components/SEO';
 
 export default function Home() {
   return (
     <>
       <SEO
-        title="千岛游学 | AI 时代职场英语"
-        description="千岛游学，菲律宾外资公司背景老师，成人1对1职场英语。帮助大厂人、出海职场人把英语从应付变成优势。"
+        title="千岛游学 | AI 时代职场英语 · 菲律宾外企背景老师1对1"
+        description="千岛游学，菲律宾外资公司背景老师，成人1对1职场英语。帮助大厂人、出海职场人把英语从应付变成优势。同时提供菲律宾精品游学项目。"
         canonical="https://1000-island.com/resource"
       />
 
-      <main style={{ maxWidth: '780px', margin: '0 auto', padding: '48px 24px', fontFamily: 'sans-serif', lineHeight: '1.8', color: '#1a1a1a' }}>
+      <main style={{ maxWidth: '100%', margin: 0, padding: 0, fontFamily: 'sans-serif' }}>
 
-        <header style={{ marginBottom: '48px' }}>
-          <p style={{ fontSize: '13px', color: '#888', marginBottom: '8px', letterSpacing: '0.05em' }}>THOUSANDISLAND</p>
-          <h1 style={{ fontSize: '32px', fontWeight: '700', margin: '0 0 16px' }}>AI 时代，职场英语是稀缺能力</h1>
-          <p style={{ fontSize: '17px', color: '#444', maxWidth: '560px' }}>
-            AI 可以帮你写邮件，但替不了你开口说。千岛游学提供1对1职场英语训练，老师来自菲律宾外资公司，教的是真实职场里用得上的英语。
-          </p>
-          <div style={{ marginTop: '24px', display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-            <a href="mailto:contact@1000-island.com" style={{ padding: '10px 20px', background: '#1a1a1a', color: '#fff', borderRadius: '6px', textDecoration: 'none', fontSize: '15px' }}>预约免费体验课</a>
-            <a href="/resource/blog" style={{ padding: '10px 20px', border: '1px solid #ddd', borderRadius: '6px', textDecoration: 'none', fontSize: '15px', color: '#1a1a1a' }}>阅读最新文章</a>
-          </div>
-        </header>
-
-        <section style={{ marginBottom: '48px' }}>
-          <h2 style={{ fontSize: '13px', fontWeight: '600', color: '#888', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '20px' }}>我们是谁</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px' }}>
-            {[
-              { title: '外资公司背景老师', desc: '不是普通菲律宾外教——是在跨国企业、外资机构真实工作过的职场人。' },
-              { title: '成人1对1课程', desc: '每节课针对你的真实工作场景：开会、汇报、邮件、谈判。' },
-              { title: 'AI + 真人协作', desc: 'AI 工具辅助学习效率，真人老师提供你真正需要的实时反馈。' },
-            ].map(item => (
-              <div key={item.title} style={{ padding: '20px', border: '1px solid #eee', borderRadius: '8px' }}>
-                <h3 style={{ fontSize: '15px', fontWeight: '600', margin: '0 0 8px' }}>{item.title}</h3>
-                <p style={{ fontSize: '14px', color: '#555', margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
+        {/* Hero 1 — 在线课 */}
+        <section style={{ position: 'relative', width: '100%' }}>
+          <picture>
+            <source media="(max-width: 768px)" srcSet="/hero-online-class-mobile.png" />
+            <img
+              src="/hero-online-class.png"
+              alt="千岛游学 AI时代职场英语 菲律宾外企背景老师1对1"
+              style={{ width: '100%', height: 'auto', display: 'block' }}
+            />
+          </picture>
+          <div style={{ position: 'absolute', bottom: '24px', left: '50%', transform: 'translateX(-50%)' }}>
+            <a href="mailto:contact@1000-island.com"
+              style={{ padding: '12px 28px', background: '#f97316', color: '#fff', borderRadius: '6px', textDecoration: 'none', fontSize: '16px', fontWeight: '600', whiteSpace: 'nowrap' }}>
+              预约免费体验课
+            </a>
           </div>
         </section>
 
-        <section style={{ marginBottom: '48px' }}>
+        {/* Hero 2 — 游学 */}
+        <section style={{ position: 'relative', width: '100%' }}>
+          <picture>
+            <source media="(max-width: 768px)" srcSet="/hero-study-abroad-mobile.png" />
+            <img
+              src="/hero-study-abroad.png"
+              alt="千岛游学 在菲律宾把英语真正用起来 精品游学项目"
+              style={{ width: '100%', height: 'auto', display: 'block' }}
+            />
+          </picture>
+          <div style={{ position: 'absolute', bottom: '24px', left: '50%', transform: 'translateX(-50%)' }}>
+            <a href="mailto:contact@1000-island.com"
+              style={{ padding: '12px 28px', background: '#f97316', color: '#fff', borderRadius: '6px', textDecoration: 'none', fontSize: '16px', fontWeight: '600', whiteSpace: 'nowrap' }}>
+              了解游学项目
+            </a>
+          </div>
+        </section>
+
+        {/* 最新文章 */}
+        <section style={{ maxWidth: '780px', margin: '0 auto', padding: '48px 24px' }}>
           <h2 style={{ fontSize: '13px', fontWeight: '600', color: '#888', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '20px' }}>最新文章</h2>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             {[
@@ -55,7 +65,7 @@ export default function Home() {
           <a href="/resource/blog" style={{ display: 'inline-block', marginTop: '16px', fontSize: '14px', color: '#555' }}>查看全部文章 →</a>
         </section>
 
-        <footer style={{ marginTop: '64px', paddingTop: '24px', borderTop: '1px solid #eee', fontSize: '13px', color: '#999' }}>
+        <footer style={{ borderTop: '1px solid #eee', padding: '24px', textAlign: 'center', fontSize: '13px', color: '#999' }}>
           <p>© 2026 千岛游学 Thousandisland · 菲律宾外资公司背景老师 · 成人职场英语1对1</p>
         </footer>
 
