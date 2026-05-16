@@ -11,7 +11,7 @@ export default function Layout({ children }) {
             <img src="/resource/logo.png" alt="千岛游学" style={{ height: '36px', width: 'auto', display: 'block' }} />
           </Link>
           <ul className={styles.navList}>
-            <li><Link href="/teacher">Teachers</Link></li>
+            <li><Link href="/teachers">外教团队</Link></li>
             <li><Link href="/study-abroad">Study Abroad</Link></li>
             <li><Link href="/faq">FAQ</Link></li>
             <li><Link href="/comparison">Compare</Link></li>
