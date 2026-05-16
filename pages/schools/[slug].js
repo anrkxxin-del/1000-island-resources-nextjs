@@ -98,6 +98,43 @@ export default function SchoolPage({ frontmatter, mdxSource }) {
           white-space: nowrap;
         }
 
+        /* 表格样式 */
+        article table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 16px 0 24px;
+          font-size: 14px;
+          display: block;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        article th {
+          background: #f5f5f5;
+          padding: 10px 14px;
+          text-align: left;
+          border: 1px solid #e0e0e0;
+          font-weight: 600;
+          white-space: nowrap;
+        }
+
+        article td {
+          padding: 10px 14px;
+          border: 1px solid #e0e0e0;
+          vertical-align: top;
+          line-height: 1.6;
+        }
+
+        article tr:nth-child(even) td {
+          background: #fafafa;
+        }
+
+        /* 评分表样式 */
+        article table:has(th:first-child) tr td:last-child {
+          color: #f97316;
+          font-weight: 500;
+        }
+
         @media (max-width: 640px) {
           .school-page {
             padding: 32px 16px;
