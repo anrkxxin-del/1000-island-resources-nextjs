@@ -7,6 +7,7 @@ export default function SEO({
   ogImage,
   ogType = 'article',
   twitterHandle = '@1000island',
+  robots = 'index, follow',
   children,
 }) {
   const siteUrl = 'https://1000-island.com';
@@ -41,7 +42,7 @@ export default function SEO({
       <meta name="language" content="English" />
       <meta name="author" content="1000 Island" />
       <meta name="copyright" content="2026 1000 Island" />
-      <meta name="robots" content="noindex, nofollow" />
+      <meta name="robots" content={robots} />
 
       {/* Favicon */}
       <link rel="icon" href="/favicon.ico" />
