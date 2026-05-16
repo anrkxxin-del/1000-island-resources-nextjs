@@ -4,6 +4,7 @@ import Link from 'next/link';
 import matter from 'gray-matter';
 import { MDXRemote } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
+import remarkGfm from 'remark-gfm';
 import SEO from '../../components/SEO';
 import SchoolImage from '../../components/SchoolImage';
 import SchoolImageGallery from '../../components/SchoolImageGallery';
@@ -148,6 +149,10 @@ export async function getStaticProps({ params }) {
   });
   if (!file) return { notFound: true };
   const { data: frontmatter, content } = matter(fs.readFileSync(path.join(contentDir, file), 'utf8'));
-  const mdxSource = await serialize(content);
+  const mdxSource = await serialize(content, {
+    mdxOptions: {
+      remarkPlugins: [remarkGfm],
+    },
+  });
   return { props: { frontmatter, mdxSource } };
 }
