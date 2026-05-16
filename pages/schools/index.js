@@ -1,11 +1,12 @@
 import SEO from '../../components/SEO';
 
 const schools = [
-  { slug: 'cia', name: 'CIA', location: 'Cebu' },
-  { slug: 'cpils', name: 'CPILS', location: 'Clark' },
-  { slug: 'ev-cg', name: 'EV CG', location: 'Cebu' },
-  { slug: 'beci', name: 'BECI', location: 'Baguio' },
-  { slug: 'smeag', name: 'SMEAG', location: 'Cebu / Baguio' },
+  { slug: 'cia', name: 'CIA — Cebu International Academy', location: '宿务 Mactan（拉普拉普市）' },
+  { slug: 'cpils', name: 'CPILS — Center for Premier International Language Studies', location: '宿务市区' },
+  { slug: 'ev-academy', name: 'EV Academy', location: '宿务市区' },
+  { slug: 'cg-academy', name: 'CG Academy — Cebu Globalization ESL Center', location: '宿务 Talisay / Banilad' },
+  { slug: 'beci', name: 'BECI — Baguio English Communication International', location: '碧瑶市' },
+  { slug: 'smeag', name: 'SMEAG Global Education', location: '宿务市' },
 ];
 
 export default function SchoolsIndex() {
