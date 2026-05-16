@@ -49,7 +49,14 @@ const nextConfig = {
 
   // 重定向规则
   redirects: async () => {
-    return [];
+    return [
+      // /resource/teachers → /resource/teachers.html（绕过 i18n 路由问题）
+      {
+        source: '/teachers',
+        destination: '/teachers.html',
+        permanent: false,
+      },
+    ];
   },
 
   // 重写规则
