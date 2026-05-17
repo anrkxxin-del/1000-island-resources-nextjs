@@ -11,10 +11,11 @@ export default function Layout({ children }) {
             <img src="/resource/logo.png" alt="千岛游学" style={{ height: '36px', width: 'auto', display: 'block' }} />
           </Link>
           <ul className={styles.navList}>
+            <li><Link href="/schools">选校指南</Link></li>
+            <li><Link href="/blog">游学攻略</Link></li>
             <li><a href="/resource/teachers.html" style={{ textDecoration: 'none', color: '#666', fontSize: '14px' }}>外教团队</a></li>
-            <li><Link href="/study-abroad">Study Abroad</Link></li>
+            <li><Link href="/about">关于千岛</Link></li>
             <li><Link href="/faq">FAQ</Link></li>
-            <li><Link href="/comparison">Compare</Link></li>
           </ul>
         </nav>
       </header>
