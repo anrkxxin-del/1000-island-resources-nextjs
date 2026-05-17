@@ -26,12 +26,17 @@ export default function Layout({ children }) {
 
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
-          <p>&copy; 2026 1000 Island Resources. All rights reserved.</p>
-          <p>Making English education accessible in the Philippines.</p>
+          <p style={{ fontWeight: '600', marginBottom: '12px' }}>联系千岛游学</p>
+          <p>微信号：<strong>qdyx001</strong> / <strong>qdyx002</strong></p>
+          <p>电话：<a href="tel:+8613902599527" style={{ color: 'inherit' }}>139-0259-9527</a></p>
+          <p>邮箱：<a href="mailto:thousandisland@aliyun.com" style={{ color: 'inherit' }}>thousandisland@aliyun.com</a></p>
           <nav className={styles.footerNav}>
-            <Link href="/">Home</Link>
-            <Link href="https://www.1000-island.com">Back to Main Site</Link>
+            <Link href="/schools">选校指南</Link>
+            <Link href="/about">关于千岛</Link>
+            <Link href="/faq">FAQ</Link>
+            <Link href="https://www.1000-island.com">主站</Link>
           </nav>
+          <p style={{ marginTop: '20px', fontSize: '12px', color: '#999' }}>&copy; 2026 千岛游学 Thousandisland ESL · 菲律宾英语游学专业顾问</p>
         </div>
       </footer>
     </div>
